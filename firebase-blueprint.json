@@ -1,0 +1,100 @@
+{
+  "entities": {
+    "Student": {
+      "title": "Student",
+      "description": "Records for students in the Jamia",
+      "type": "object",
+      "properties": {
+        "studentId": { "type": "string" },
+        "name": { "type": "string" },
+        "fatherName": { "type": "string" },
+        "caste": { "type": "string" },
+        "age": { "type": "number" },
+        "address": { "type": "string" },
+        "phoneNumber": { "type": "string" },
+        "gmail": { "type": "string" },
+        "dateOfAdmission": { "type": "string", "format": "date" },
+        "reference": { "type": "string" },
+        "guardianId": { "type": "string", "description": "UID of the linked user account if any" }
+      },
+      "required": ["studentId", "name", "fatherName"]
+    },
+    "DailyReport": {
+      "title": "Daily Report",
+      "description": "Daily lesson and prayer records for a student",
+      "type": "object",
+      "properties": {
+        "studentId": { "type": "string" },
+        "date": { "type": "string", "format": "date" },
+        "sabak": { "type": "string" },
+        "sabqi": { "type": "string" },
+        "manzil": { "type": "string" },
+        "duain": { "type": "string" },
+        "namaz": {
+          "type": "object",
+          "properties": {
+            "fajr": { "type": "boolean" },
+            "dhuhr": { "type": "boolean" },
+            "asr": { "type": "boolean" },
+            "maghrib": { "type": "boolean" },
+            "isha": { "type": "boolean" }
+          }
+        },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["studentId", "date"]
+    },
+    "Attendance": {
+      "title": "Attendance",
+      "description": "Attendance record for a student on a specific date",
+      "type": "object",
+      "properties": {
+        "studentId": { "type": "string" },
+        "date": { "type": "string", "format": "date" },
+        "status": { "type": "string", "enum": ["present", "absent", "leave"] }
+      },
+      "required": ["studentId", "date", "status"]
+    },
+    "FinanceRecord": {
+      "title": "Finance Record",
+      "description": "Income or Expense record",
+      "type": "object",
+      "properties": {
+        "type": { "type": "string", "enum": ["income", "expense"] },
+        "amount": { "type": "number" },
+        "description": { "type": "string" },
+        "name": { "type": "string", "description": "Donor name or item name" },
+        "date": { "type": "string", "format": "date-time" }
+      },
+      "required": ["type", "amount", "date"]
+    },
+    "Admin": {
+      "title": "Admin",
+      "description": "Admin user mapping",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "email": { "type": "string" }
+      },
+      "required": ["uid"]
+    }
+  },
+  "firestore": {
+    "students": {
+      "schema": "Student",
+      "description": "Collection of students"
+    },
+    "dailyReports": {
+      "schema": "DailyReport",
+      "description": "Chronological lesson reports"
+    },
+    "attendance": {
+      "schema": "Attendance",
+      "description": "Daily attendance records"
+    },
+    "finance": {
+      "schema": "FinanceRecord",
+      "description": "Income and expenses"
+    }
+  }
+}

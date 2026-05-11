@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-urdu: "Noto Naskh Arabic", serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  
+  --color-primary-green: #064e3b;
+  --color-accent-gold: #b8860b;
+  --color-paper-white: #fdfbf7;
+  --color-ink-black: #1a1a1a;
+}
+
+@layer base {
+  [dir="rtl"] {
+    font-family: var(--font-urdu);
+  }
+  
+  body {
+    background-color: var(--color-paper-white);
+    color: var(--color-ink-black);
+  }
+}
+
+.urdu-text {
+  font-family: var(--font-urdu);
+}

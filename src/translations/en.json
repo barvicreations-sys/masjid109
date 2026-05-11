@@ -1,0 +1,63 @@
+{
+  "bismillah": "Bismillah ir Rahman ir Raheem",
+  "jamia_name": "Jamia Naqshbandia Barvi Razvia",
+  "jamia_address": "Chak No 109 GB Bajajanwala, Jaranwala, Faisalabad",
+  "dashboard": "Dashboard",
+  "home": "Home",
+  "login": "Login",
+  "student_login": "Student Login",
+  "admin_login": "Admin Login",
+  "student_panel": "Student Panel",
+  "admin_panel": "Admin Panel",
+  "finance_system": "Finance System",
+  "logout": "Logout",
+  "language": "English",
+  "switch_to_english": "English",
+  "switch_to_urdu": "اردو",
+  "profiles": {
+    "center": "Faizan Nazar",
+    "left": "Zair-e-Nigrani",
+    "right": "Moallim"
+  },
+  "student": {
+    "id": "Student ID",
+    "name": "Name",
+    "father_name": "Father Name",
+    "caste": "Caste",
+    "age": "Age",
+    "address": "Address",
+    "phone": "Phone Number",
+    "gmail": "Gmail",
+    "admission_date": "Date of Admission",
+    "reference": "Reference",
+    "reports": "Reports",
+    "daily": "Daily",
+    "weekly": "Weekly",
+    "monthly": "Monthly",
+    "yearly": "Yearly",
+    "sabak": "Lesson",
+    "sabqi": "Previous Lesson",
+    "manzil": "Manzil",
+    "duain": "Duain",
+    "namaz": "Prayers"
+  },
+  "admin": {
+    "student_management": "Student Management",
+    "attendance": "Attendance System",
+    "view_all": "View All Students",
+    "edit": "Edit",
+    "delete": "Delete",
+    "mark_attendance": "Mark Attendance",
+    "view_attendance": "View Attendance",
+    "lesson_entry": "Sabak & Namaz Entry"
+  },
+  "finance": {
+    "income": "Income",
+    "expense": "Expense",
+    "donor": "Donor Name",
+    "amount": "Amount",
+    "date": "Date",
+    "description": "Description"
+  },
+  "footer": "Powered by Barvi Graphics Faisalabad"
+}

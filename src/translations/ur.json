@@ -1,0 +1,63 @@
+{
+  "bismillah": "بسم اللہ الرحمن الرحیم",
+  "jamia_name": "جامعہ نقشبندیہ باروی رضویہ",
+  "jamia_address": "چک نمبر 109 گ ب بجاجانوالہ جڑانوالہ فیصل آباد",
+  "dashboard": "ڈیش بورڈ",
+  "home": "ہوم",
+  "login": "لاگ ان",
+  "student_login": "طلبہ لاگ ان",
+  "admin_login": "ایڈمن لاگ ان",
+  "student_panel": "اسٹوڈنٹ پینل",
+  "admin_panel": "ایڈمن پینل",
+  "finance_system": "فنانس سسٹم",
+  "logout": "لاگ آؤٹ",
+  "language": "Urdu",
+  "switch_to_english": "English",
+  "switch_to_urdu": "Urdu",
+  "profiles": {
+    "center": "فیضانِ نظر",
+    "left": "زیرِ نگرانی",
+    "right": "معلم"
+  },
+  "student": {
+    "id": "اسٹوڈنٹ آئی ڈی",
+    "name": "نام",
+    "father_name": "ولدیت",
+    "caste": "قومیتی / ذات",
+    "age": "عمر",
+    "address": "پتہ",
+    "phone": "فون نمبر",
+    "gmail": "جی میل",
+    "admission_date": "تاریخِ داخلہ",
+    "reference": "حوالہ",
+    "reports": "رپورٹس",
+    "daily": "روزانہ",
+    "weekly": "ہفتہ وار",
+    "monthly": "ماہانہ",
+    "yearly": "سالانہ",
+    "sabak": "سبق",
+    "sabqi": "سبقی",
+    "manzil": "منزل",
+    "duain": "دعائیں",
+    "namaz": "نماز"
+  },
+  "admin": {
+    "student_management": "طلبہ مینجمنٹ",
+    "attendance": "حاضری",
+    "view_all": "تمام طلبہ دیکھیں",
+    "edit": "ترمیم",
+    "delete": "حذف",
+    "mark_attendance": "حاضری لگائیں",
+    "view_attendance": "حاضری دیکھیں",
+    "lesson_entry": "سبق اور نماز کا اندراج"
+  },
+  "finance": {
+    "income": "آمدن",
+    "expense": "خرچ",
+    "donor": "عطیہ دینے والا",
+    "amount": "رقم",
+    "date": "تاریخ",
+    "description": "تفصیل"
+  },
+  "footer": "تعاون فرمایا: باروی گرافکس فیصل آباد"
+}

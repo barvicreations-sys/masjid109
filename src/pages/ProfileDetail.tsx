@@ -1,0 +1,118 @@
+import React from 'react';
+import { useLanguage } from '../context/LanguageContext';
+import { motion } from 'motion/react';
+import { ArrowLeft, MapPin, Target, Briefcase, BookOpen, Heart, Info } from 'lucide-react';
+
+interface ProfileDetailProps {
+  profileId: string | null;
+  onBack: () => void;
+}
+
+export default function ProfileDetail({ profileId, onBack }: ProfileDetailProps) {
+  const { t, isRTL, language } = useLanguage();
+
+  // Data based on the prompt's "Barvi Brothers" details
+  const profileData = {
+    name: language === 'ur' ? 'باروی برادرز' : 'Barvi Brothers',
+    intro: language === 'ur'
+      ? 'باروی برادرز ایک دینی و تعلیمی پلیٹ فارم ہے جو قرآن و سنت کی تعلیم، طلبہ کی تربیت، اور اسلامی خدمات کے فروغ کے لیے کام کر رہا ہے۔ یہ پلیٹ فارم نوجوانوں میں دینی شعور، اخلاقیات اور تعلیم عام کرنے کے مشن پر قائم ہے۔'
+      : 'Barvi Brothers is an Islamic and educational platform dedicated to religious education, student development, and spreading Islamic teachings among youth.',
+    departments: language === 'ur'
+      ? ['دینی تعلیم', 'حفظ و ناظرہ', 'درس نظامی', 'طلبہ کی تربیت', 'اسلامی رہنمائی', 'مدرسہ و جامعہ نظام']
+      : ['Islamic Education', 'Hifz & Nazra', 'Dars-e-Nizami', 'Student Training', 'Islamic Guidance', 'Jamia Management'],
+    services: language === 'ur'
+      ? ['طلبہ کی تعلیمی نگرانی', 'اسلامی تعلیمات کی ترویج', 'دینی پروگرامز', 'حاضری و اسباق ریکارڈ', 'طلبہ کی اخلاقی تربیت']
+      : ['Student Educational Monitoring', 'Islamic Awareness Programs', 'Attendance & Lesson Records', 'Religious Activities', 'Character Building'],
+    location: language === 'ur' ? 'فیصل آباد' : 'Faisalabad',
+    mission: language === 'ur' ? '"دینِ اسلام کی خدمت اور نوجوانوں کی دینی تربیت"' : '“Serving Islam and nurturing the next generation with Islamic values.”',
+  };
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, x: 20 }}
+      animate={{ opacity: 1, x: 0 }}
+      className="max-w-4xl mx-auto"
+    >
+      <button
+        onClick={onBack}
+        className="flex items-center space-x-2 rtl:space-x-reverse text-primary-green hover:text-emerald-900 mb-8 font-semibold"
+      >
+        <ArrowLeft size={20} className="rtl:rotate-180" />
+        <span>{isRTL ? 'پیچھے جائیں' : 'Go Back'}</span>
+      </button>
+
+      <div className="bg-white rounded-3xl shadow-xl overflow-hidden border border-slate-200">
+        <div className="bg-primary-green p-8 text-white relative">
+          <div className="absolute top-0 right-0 p-8 opacity-10">
+            <BookOpen size={120} />
+          </div>
+          <h2 className="text-4xl font-bold mb-2">{profileData.name}</h2>
+          <p className="flex items-center space-x-2 rtl:space-x-reverse opacity-90">
+            <MapPin size={16} />
+            <span>{profileData.location}</span>
+          </p>
+        </div>
+
+        <div className="p-8 space-y-12">
+          {/* Introduction */}
+          <section>
+            <h3 className="text-xl font-bold text-primary-green mb-4 flex items-center gap-2">
+              <Info className="text-primary-green opacity-60" />
+              {isRTL ? 'تعارف' : 'Introduction'}
+            </h3>
+            <p className="text-slate-700 leading-relaxed text-lg">
+              {profileData.intro}
+            </p>
+          </section>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+            {/* Departments */}
+            <section>
+              <h3 className="text-xl font-bold text-primary-green mb-4 flex items-center gap-2">
+                <Briefcase className="text-primary-green opacity-60" />
+                {isRTL ? 'شعبہ جات' : 'Departments'}
+              </h3>
+              <ul className="grid grid-cols-1 gap-2">
+                {profileData.departments.map((dept, i) => (
+                  <li key={i} className="flex items-center space-x-2 rtl:space-x-reverse text-slate-600">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                    <span>{dept}</span>
+                  </li>
+                ))}
+              </ul>
+            </section>
+
+            {/* Services */}
+            <section>
+              <h3 className="text-xl font-bold text-primary-green mb-4 flex items-center gap-2">
+                <Target className="text-primary-green opacity-60" />
+                {isRTL ? 'خدمات' : 'Services'}
+              </h3>
+              <ul className="grid grid-cols-1 gap-2">
+                {profileData.services.map((service, i) => (
+                  <li key={i} className="flex items-center space-x-2 rtl:space-x-reverse text-slate-600">
+                    <span className="w-1.5 h-1.5 rounded-full bg-yellow-400"></span>
+                    <span>{service}</span>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          </div>
+
+          {/* Mission */}
+          <section className="bg-slate-50 p-8 rounded-2xl border border-slate-100 text-center">
+            <div className="flex justify-center mb-4">
+              <Heart className="text-primary-green fill-primary-green" />
+            </div>
+            <h3 className="text-xl font-bold text-primary-green mb-2">
+              {isRTL ? 'مشن' : 'Mission'}
+            </h3>
+            <p className="text-primary-green font-black text-xl italic">
+              {profileData.mission}
+            </p>
+          </section>
+        </div>
+      </div>
+    </motion.div>
+  );
+}
